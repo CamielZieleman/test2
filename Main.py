@@ -259,14 +259,15 @@ def combine():
 
 def print_html():
     x = open("index.html","w")
-    print(f"""<!doctype html>
+    print(f"""<!DOCTYPE html>
 <html>
-<head>
-    <title>This is the title of the webpage!</title>
-</head>
-<body>
-    <p>Current time: {time.strftime("%H:%M:%S",time.localtime())}. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-    <img src="5000.png" width="1500" height="750" alt="Girl in a jacket">
+<style>
+
+</style>
+<body style="background-color: #4b4b4b;">
+<h1 style="text-align:center; color: white;">Updated at: {datetime.now().strftime('%Y-%m-%d %H:%M')} </h1>
+<p style="text-align:center; color: white;">Current % dot:</p>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="5000.png" width="1500" height="750" alt="Tuinbonen">
 </body>
 </html>""",file=x)
 
@@ -282,7 +283,7 @@ def run_all():
     sync()
     print("Plotting combi.txt")
     os.system("gnuplot Graph.gnuplot")
-    print_html()
+
     os.system("git add .")
     os.system("git commit -m 'testing'")
     os.system("git push -u origin main")
