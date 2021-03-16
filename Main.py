@@ -290,5 +290,6 @@ def run_all():
     print_html()
     os.system("git add .")
     os.system("git commit -m 'testing'")
+    os.system("git config credential.helper store")
     os.system("git push -u origin main")
 run_all()
