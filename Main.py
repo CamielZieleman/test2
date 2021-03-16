@@ -283,7 +283,7 @@ def run_all():
     sync()
     print("Plotting combi.txt")
     os.system("gnuplot Graph.gnuplot")
-
+    print_html()
     os.system("git add .")
     os.system("git commit -m 'testing'")
     os.system("git push -u origin main")
