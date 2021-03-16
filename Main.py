@@ -26,8 +26,9 @@ def getprice():
 
 
 
-
+perc = 0
 def Line():
+    global perc
     count = 0
     x = open("result.txt","w")
     with open("temp144","r") as f:
@@ -55,7 +56,8 @@ def Line():
                 #print(count,int(j12),int(i12))
                 total = i12+j12
                 print(int(round(j12/total*100)),file=x)
-                #print(int(round(j12/(j12+i12)*100,2)),file=x)          
+                #print(int(round(j12/(j12+i12)*100,2)),file=x)  
+                perc = int(round(j12/total*100)) 
 
 
 maanden = [2543,
@@ -243,7 +245,6 @@ def sync():
             value = line.split()
 
             print(count,value[0],prices[0],file=x)
-
             prices.pop(0)
 
 def combine():
@@ -266,7 +267,7 @@ def print_html():
 </style>
 <body style="background-color: #4b4b4b;">
 <h1 style="text-align:center; color: white;">Updated at: {datetime.now().strftime('%Y-%m-%d %H:%M')} </h1>
-<p style="text-align:center; color: white;">Current % dot:</p>
+<p style="text-align:center; color: white;">Current % dot:{perc}</p>
 <img style="display: block; margin-left: auto; margin-right: auto;" src="5000.png" width="1500" height="750" alt="Tuinbonen">
 </body>
 </html>""",file=x)
