@@ -276,6 +276,9 @@ def print_html():
 
 
 def run_all():
+
+    os.system("python3 write.py")
+    os.system("python3 ref3.py")
     print("Combining 144.txt and 144_test.txt into temp144...")
     combine()
     print("Calculating vectors...")
