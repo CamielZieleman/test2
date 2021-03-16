@@ -3,6 +3,9 @@ import requests
 from datetime import datetime
 import time
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
+import time
+
+
 
 rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:8332"%('B', 'A'), timeout = 500)
 
@@ -254,6 +257,21 @@ def combine():
     
     print(line,file=x)
 
+def print_html():
+    x = open("index.html","w")
+    print(f"""<!doctype html>
+<html>
+<head>
+    <title>This is the title of the webpage!</title>
+</head>
+<body>
+    <p>Current time: {time.strftime("%H:%M:%S",time.localtime())}. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <img src="5000.png" width="1500" height="750" alt="Girl in a jacket">
+</body>
+</html>""",file=x)
+
+
+
 
 def run_all():
     print("Combining 144.txt and 144_test.txt into temp144...")
@@ -264,7 +282,7 @@ def run_all():
     sync()
     print("Plotting combi.txt")
     os.system("gnuplot Graph.gnuplot")
-
+    print_html()
     os.system("git add .")
     os.system("git commit -m 'testing'")
     os.system("git push -u origin main")
