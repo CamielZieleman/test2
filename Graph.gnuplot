@@ -1,4 +1,4 @@
-set terminal png size 3500,1500
+set terminal png size 3000,1500
 set output "5000.png"
 set datafile separator " "
 set xtics  0,10
