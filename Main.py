@@ -267,7 +267,7 @@ def print_html():
 </style>
 <body style="background-color: #4b4b4b;">
 <h1 style="text-align:center; color: white;">Updated at: {datetime.now().strftime('%Y-%m-%d %H:%M')} </h1>
-<p style="text-align:center; color: white;">Current % dot:{perc}</p>
+<p style="text-align:center; color: white;">Current % dot: {perc}%</p>
 <img style="display: block; margin-left: auto; margin-right: auto;" src="5000.png" width="1500" height="750" alt="Tuinbonen">
 </body>
 </html>""",file=x)
